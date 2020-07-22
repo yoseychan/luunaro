@@ -21,6 +21,11 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "examples" */ '../views/Examples.vue')
   },
   {
+    path: '/usability',
+    name: 'Usability',
+    component: () => import(/* webpackChunkName: "usability" */ '../views/Usability.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
