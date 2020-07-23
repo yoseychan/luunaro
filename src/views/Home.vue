@@ -27,13 +27,13 @@
             <div class="col-xl-4">
                 <div class="bubble b2">
                     <h2>Neumorphic</h2>
-                    <p>Longer or same description length as the first bubble, but it can aslo hold longer text</p>
+                    <p>Revivng the skeuomorphism and improving it with new proven values of minimalism</p>
                 </div>
             </div>
             <div class="col-xl-3">
                 <div class="bubble b1">
-                    <h2>Minimalistic</h2>
-                    <p>Adding </p>
+                    <h2>Realistic</h2>
+                    <p>Adding back the realism feeling that was once lost with skeuomorphism</p>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                     <h3>Usability</h3>
                 </div>
                 <div class="text">
-                    <p>List of recommendations, pros and cons of Neumorphic design.</p>
+                    <p>List of recommendations on how to use the neumorphic design effectively and its pros and cons.</p>
                 </div>
                 <div class="buttn neu-light-inv disabled">
                     <router-link to="/">Coming soon</router-link>

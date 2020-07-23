@@ -13,6 +13,8 @@
     </div>
     <div class="row justify-content-center">
         <p class="col-xl-8">
+            Luunaro.com offers its own <a href="https://www.figma.com/proto/9W9TLv1w2PWI55XMzDP4jo/Major-project?node-id=13%3A15&scaling=min-zoom" target="_blank">styleguide</a> 
+            that contains all the elements and their styling used for the project. 
            
         </p>
     </div>
@@ -28,9 +30,21 @@ h1 {
 
 }
 p {
+    margin-top: 30px;
     text-align: justify;
     font-size: 20px;
     color: #606875;
+    a {
+        color: #BC5353;
+        transition: .6s;
+    }
+    a:hover {
+        color: #926d8c;
+        text-decoration: none;
+    }
+}
+.container {
+    min-height: 800px;
 }
     
 </style>

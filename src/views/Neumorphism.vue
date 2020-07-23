@@ -5,7 +5,7 @@
                 <div class="col-xl-8">
                     <h1>About Neumorphism</h1>
                     <p> 
-                        Neumorphism combines characteristics of both skeuomorphism and minimalism. 
+                        Neumorphism combines characteristics of both skeuomorphism and material design. 
                         It mainly uses shadows to make the elements seem to be softly extruded from the background.   
                     </p>
                 </div>
@@ -25,7 +25,10 @@
                 </div>
                 <div class="col-xl-8">
                     <h2>Skeuomorphism</h2>
-                    <p>text text text pragraph text text text</p>    
+                    <p>Skeuomorphism in user interfaces imitated the real world textures. Users could easily familiarize with the UI.
+                         Although it offered great user experience and was affordable,
+                         it had the downside of leading to very cluttered interfaces with unnecessary features and furthermore cause the UI design stagnation.
+                    </p>    
                 </div>
             </div>
         </div>
@@ -33,7 +36,9 @@
             <div class="container row justify-content-between">
                 <div class="col-xl-8">
                     <h2>Minimalism</h2>
-                    <p>text text text pragraph text text text</p>
+                    <p>Minimalism replaced the skeuomorphism, creating clean interfaces and leaving only the most necessary functionality.
+                         Flat design replaced the realism in the icons with 2D, that made the icons look flat.
+                         Material design added a shadow to the elements to give a light accent and make them seem slightly elevated from the background.</p>
                 </div>
                 <div class="col-xl-3 orn">
                     <div class="shape circle neu-light-inv">
@@ -50,8 +55,11 @@
                     </div>
                 </div>
                 <div class="col-xl-8">
-                    <h2>Heading</h2>
-                    <p>text text text pragraph text text text</p>          
+                    <h2>Softness</h2>
+                    <p>Similarly to material design, neumorphism made the elements seem extruded or pushed in softly. The design uses multiple shadows to give an element a dimension.
+                         Another characteristic of Neumorphism is the rounded edges of the elements.
+                         The non changing colour of the element, round edges and multiple shadows make it seem as the element has a nearly touchable, soft form.
+                    </p>          
                 </div>
             </div>
         </div>

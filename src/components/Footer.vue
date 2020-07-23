@@ -5,18 +5,18 @@
                 <div class="left">
                     <p>More information available at:</p>
                     <ul class="ficons">
-                        <li><a href="#" target="_blank"><i class="fab fa-figma"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fab fa-figma"></i></a></li>
+                        <li><a href="https://www.youtube.com/watch?v=tAs59fxBDSU" target="_blank"><i class="fab fa-youtube"></i></a></li>
                         <li><a href="https://github.com/yoseychan/luunaro" target="_blank"><i class="fab fa-github"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-medium-m"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+                        <li><a href="https://uxdesign.cc/neumorphism-in-user-interfaces-b47cef3bf3a6" target="_blank"><i class="fab fa-medium-m"></i></a></li>
+                        <li><a href="https://dribbble.com/tags/softui" target="_blank"><i class="fab fa-dribbble"></i></a></li>
                     </ul>
                 </div>
 
                 <div class="right fnav">
-                    <router-link to="/">Home</router-link> |
+                    <router-link to="/" replace>Home</router-link> |
                     <router-link to="/neumorphism">Neumorphism</router-link> |
-                    <router-link to="/example">Examples</router-link> |
+                    <router-link to="/examples">Examples</router-link> |
                     <a class="disabled">Usability</a> | 
                     <router-link to="/about">About</router-link>
                 </div>
