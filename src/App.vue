@@ -17,7 +17,8 @@ body {
     -webkit-transition: all 0.6s;
     -moz-transition: all 0.6s;
     -o-transition: all 0.6s;
-    transition: all 0.6s; 
+    transition: all 0.6s;
+    outline: none;
   }
   button {
     -webkit-transition: all 0.6s;

@@ -135,9 +135,6 @@
         box-shadow: 4px 4px 12px #A24747, -4px -4px 12px #C46363;
         border-radius: 10px;
     }
-    .sqr {
-        border-radius: 10px;
-    }
     .circle {
         border-radius: 50%;
     }  
