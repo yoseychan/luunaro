@@ -2,7 +2,7 @@
 <div>
     <div class="container row justify-content-around dark">
         <div class="ff col col-xl-6">
-            <h1><span>Neumorphism </span> - the new web design of 2020</h1>
+            <h1><span>Neumorphism </span> - the new web design trend of 2020</h1>
             <p>
                 After the skeuomorphism was replaced with minimalism - flat design and material design in 2010, skeuomorphism did not really disappear.
                 Neumorphistic design is the new combination of both - minimalism and skeuomorphism, and is widely discussed among web designers and developers in 2020.
