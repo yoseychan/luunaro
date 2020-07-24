@@ -10,8 +10,8 @@
                     </p>
                 </div>
                 <div class="col-xl-3 orn">
-                    <div class="shape sqr neu-darker">
-                        <div class="shape-inner sqr neu-darker"></div>
+                   <div class="shape circle neu-darker">
+                        <div class="shape-inner circle neu-dark-inv"></div>
                     </div>
                 </div>
             </div>
@@ -19,8 +19,8 @@
         <div class="section white neu-light-inv">
             <div class="container row justify-content-between">
                 <div class="orn col-xl-3">
-                    <div class="shape circle neu-light">
-                        <div class="shape-inner circle neu-light-inv"></div>
+                    <div class="shape ">
+                        <div class="skeumorphism neu-light"></div>
                     </div>                   
                 </div>
                 <div class="col-xl-8">
@@ -41,18 +41,14 @@
                          Material design added a shadow to the elements to give a light accent and make them seem slightly elevated from the background.</p>
                 </div>
                 <div class="col-xl-3 orn">
-                    <div class="shape circle neu-light-inv">
-                        <div class="shape-inner circle neu-light-inv"></div>
-                    </div>        
+                    <div class="shape minimalism"></div>        
                 </div>
             </div>
         </div>
         <div class="section red neu-red-inv">
             <div class="container row justify-content-between">
                 <div class="orn col-xl-3">
-                    <div class="shape neu-red-inv sqr">  
-                        <div class="shape-inner sqr neu-red-inv"></div>
-                    </div>
+                    <div class="shape softness"></div>
                 </div>
                 <div class="col-xl-8">
                     <h2>Softness</h2>
@@ -117,6 +113,27 @@
             height: 200px;
             margin: 50px 50px;   
         }
+        .skeumorphism{
+            background-image: url('.././assets/wood.jpg');
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    }
+    .minimalism {
+        background-color:#BC5353;
+        border-radius: 10px;
+        -webkit-box-shadow: 10px 10px 19px -8px rgba(21,21,27,1);
+        -moz-box-shadow: 10px 10px 19px -8px rgba(21,21,27,1);
+        box-shadow: 10px 10px 19px -8px rgba(21,21,27,1);
+    }
+    .softness {
+        background: linear-gradient(131.93deg, #BC5353 -12.11%, #E07474 -12.11%, #BC5353 53.42%, #A54747 100%), #BC5353;
+        box-shadow: 4px 4px 12px #A24747, -4px -4px 12px #C46363;
+        border-radius: 10px;
     }
     .sqr {
         border-radius: 10px;
