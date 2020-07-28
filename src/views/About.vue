@@ -30,10 +30,12 @@ h1 {
 
 }
 p {
+    display: inline-block;
     margin-top: 30px;
     text-align: justify;
     font-size: 20px;
     color: #606875;
+    padding: 0 30px;
     a {
         color: #BC5353;
         transition: .6s;
@@ -45,6 +47,12 @@ p {
 }
 .container {
     min-height: 800px;
+}
+
+@media screen and (max-width: 390px) {
+    p {
+        text-align: left;
+    }
 }
     
 </style>

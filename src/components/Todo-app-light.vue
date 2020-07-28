@@ -1,279 +1,389 @@
 <template>
     <div class="col-xl-6 white">
-        <div class="application neu-light ">
-            <h4>To-do planner</h4>
-            <div class="newData neu-light">
-                <div class="checkbox-container">
-                    <div class="checker">
-                        <span class="label">All</span>
-                        <div class="check">  
-                            <input type="checkbox" name="check" v-model="allChecked">
-                            <span @click="selectAll(); change();" class="checkmark"></span>    
-                        </div>
-                    </div>
-                </div>
-                <div class="new-task">
-                    <input type="text" class="task-input" @keypress.enter="submit" v-model="newItem" v-bind:placeholder="placeholder">
-                    <button @click="remove" class="clear neu-light">Clear List</button>
-                </div>                      
-            </div>
 
-            <div class="list">
-                <div class="list-row" v-for="(listItem, index) in listItems" :key="index">
-                    <div class="listing">
-                        <div class="checkbox-container">
-                            <div class="checker">
-                                <div class="check">   
-                                    <input type="checkbox" v-model="listItems[index].checked" >
-                                    <span @click="check(index)" class="checkmark"></span>   
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-items">
-                            <input class="list-input" type="text" v-model="listItem.name">
-                            <button class="neu-light list-btn" @click="deleteItem(index)"> x </button>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div>
-    </div>
+		<div class="application">
+
+			<h4>To-do planner</h4>
+
+			<!-- Add Field -->
+			<div class="newData">
+				<div class="new-task">
+					<input type="text" class="col-xl-9" @keypress.enter="submit" v-model="newItem" v-bind:placeholder="placeholder">
+					<button @click="submit" class="col-xl-2 bttn bright add">+</button>
+				</div>                      
+			</div>
+
+			<!-- Controls -->
+			<div class="controls">
+				<div class="check-wrap col">
+					<input type="checkbox" name="check" v-model="allChecked">
+					<span @click="selectAll(); change();" class="checkmark"></span>
+				</div>
+
+				<span class="label">Select All</span>
+
+				<div class="clear-wrap">
+					<button @click="remove" class="clear-list bttn bright small">Clear List</button>
+				</div>
+			</div>
+
+			<!-- Tasks -->
+			<div class="tasks">
+				<div class="task-row" v-for="(listItem, index) in listItems" :key="index">
+					<div class="task col">
+						<div class="check-wrap col">
+							<input type="checkbox" name="check" v-model="listItems[index].checked">
+							<span @click="check(index)" class="checkmark"></span>
+						</div>
+						<input type="text" v-model="listItem.name">
+						<button class="bttn bright small" @click="deleteItem(index)"> x </button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
 </template>
 
 <style scoped lang="scss">
+@import '../assets/styles/colors';
+@import '../assets/styles/buttons';
 
-.application { 
-    padding: 20px 25px 40px;
-    border-radius: 10px;
-    margin: 100px auto;
-    max-width: 550px;
-    button, input {
-        border:none;
-        color: #606875;
-        background-color: #DEDEDE;
-        -webkit-transition: all 0.6s;
-        -moz-transition: all 0.6s;
-        -o-transition: all 0.6s;
-        transition: all 0.6s;
-    }
-     button:focus, input:focus {
-        outline: none;
-    }
-    input:focus {
-        border-radius: 10px;
-    }
-    input[type="text"] {
-        color: #606875;
-        min-width: 300px;
-        padding: 10px;
-        border-bottom: 1px solid #c5c5c5;
-    }
-    label {
-        cursor: default;
-    }
-    .label{
-        display: inline-block;
-    }
+h4 {
+	text-align:center;
+	margin: 16px 0;
 }
 
+.application {
+	box-shadow: $bright;
+	padding: 20px 40px;
+	border-radius: 12px;
+	margin: 100px auto;
+	max-width: 550px;
 
-.white{
-    background-color: #DEDEDE;
-    box-shadow: inset 4px 4px 12px #3b3b3b, inset -4px -4px 12px #EFEFEF;
-    border-radius: 10px;
-    margin: 50px auto;
-    h4 {
-        text-align: center;
-        margin: 20px 0 30px;
-        color: #BC5353;
-    }
-}
-.newData {
-    min-height: 55px;
-    border-radius: 10px;
-    padding: 0 10px;
-    .task-input {
-        background-color:  #DEDEDE;
-        margin: 0 10px;
+	input[type="text"] {
+		border:none;
+		color: $txt-onLight-0;
+		background: none;
+		padding:12px;
+		width: 100%;
+		
+		// Transition
+		-webkit-transition: all 0.26s 0s ease-in-out;
+		-moz-transition: all 0.26s 0s ease-in-out;
+		-o-transition: all 0.26s 0s ease-in-out;
+		transition: all 0.26s 0s ease-in-out;
 
-    }
-    .check {
-        color: #606875;
-    }
-    .new-task {
-        display: inline-block;
-        margin: 30px 0 50px;
-        max-width: 600px;
-    }
-    .clear {
-        padding: 5px 20px;
-        border-radius: 10px;
-        font-size: 14px;
+		&:focus {
+			outline: none;
+			border-radius: 10px;
+		}
+	}
 
-    }
-    .clear:hover {
-        box-shadow: inset 4px 4px 12px #b3b3b3, inset -4px -4px 12px #ffffff; 
-        color:#BC5353;
-    } 
-}
+	label {
+		cursor: default;
+	}
 
-.task-input:focus, .list-input:focus {
-    box-shadow: inset 4px 4px 12px #b3b3b3, inset -4px -4px 12px #ffffff;
+	// Top Part
+	.newData {
+		margin:32px 0;
+		box-shadow: $bright;
+		padding:16px;
+		border-radius: 12px;
+	}
+
 }
 
+.controls, .tasks {
 
-//List items 
+	position:relative;
+	left:0;
+	right:0;
 
-.list {
-    padding: 10px;
-    min-height: 200px;
-    .check {
-        top: 7px;
-        left: 20px;
-    }
+	.check-wrap {
+		position:relative;
+
+		// Disable UserSelect
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		input {
+			display:none;
+
+			&:checked ~ .checkmark:after {
+				display: block;        
+			}
+		}
+
+		.checkmark {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 32px;
+			width: 32px;
+			border-radius: 50%;
+			cursor:pointer;
+
+			// Transition
+			-webkit-transition: all 0.16s 0s ease-in-out;
+			-moz-transition: all 0.16s 0s ease-in-out;
+			-o-transition: all 0.16s 0s ease-in-out;
+			transition: all 0.16s 0s ease-in-out;
+			
+			&:after {
+				content: "";
+				position: absolute;
+				left: 13px;
+				top: 10px;
+				width: 6px;
+				height: 10px;
+				border: solid $primary;
+				border-width: 0 3px 3px 0;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				display: none;
+			}
+		}
+	}
 }
 
-.listing {
-    margin-top: 10px;
+.controls {
+
+	height:38px;
+
+	.check-wrap {
+		left:16px;
+	}
+
+	.label{
+		position:absolute;
+		top:3px;
+		left:72px;
+	}
+
+	.clear-wrap {
+		
+		button {
+			position:absolute;
+			right:16px;
+		}
+	}
+
+	
 }
 
-.list-items {
-    display: inline-block;
-    input {
-        display: inline-block;
-        margin:  10px 20px 10px 10px;
-    }
+.tasks {
+	position:relative;
+	top:24px;
+	left:0;
+	right:0;
+	padding-bottom:32px;
+
+	.task-row {
+
+		position:relative;
+		height:64px;
+
+		.task {
+
+			.check-wrap {
+				position:absolute;
+				top:9px;
+				left:16px;
+			}
+
+			input {
+				position:absolute;
+				left:60px;
+				width:70%;
+			}
+
+			button {
+				position:absolute;
+				top:8px;
+				right:16px;
+			}
+
+		}
+	}
 }
 
-.list-btn {
-    margin-left: 10px;
-    border-radius: 10px;
-    padding: 1px 10px;
-}
-.list-btn:hover {
-   box-shadow: inset 4px 4px 12px #b3b3b3, inset -4px -4px 12px #ffffff; 
-    color:#BC5353; 
+.checkbox-container, .controls-container {
+
+	/**.checkbox
+	* 		
+	* 		Checkboxes
+	* 		~ Dark & White
+	*/
+
+	.check {
+		position: relative;
+		padding: 5px 0 0 50px;
+		cursor: pointer;
+		font-size: 16px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		input {
+			display:none;
+
+			&:checked ~ .checkmark:after {
+				display: block;        
+			}
+		}
+
+		.checkmark {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 32px;
+			width: 32px;
+			border-radius: 50%;
+
+			// Transition
+			-webkit-transition: all 0.16s 0s ease-in-out;
+			-moz-transition: all 0.16s 0s ease-in-out;
+			-o-transition: all 0.16s 0s ease-in-out;
+			transition: all 0.16s 0s ease-in-out;
+			
+			&:after {
+				content: "";
+				position: absolute;
+				left: 13px;
+				top: 10px;
+				width: 6px;
+				height: 10px;
+				border: solid $primary;
+				border-width: 0 3px 3px 0;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				display: none;
+			}
+		}
+	}
 }
 
-//CHECKBOX 
-.checkbox-container {
-    width: 50px;
-    display: inline-block;
-    .label {
-        color: #BC5353;
-        margin-left: 20px;
-    }
+.dark, .white {
+	padding: 32px;
 }
-.newData {
-    .checker {
-        width: 36px;
-        height: 36px;
-    }
-    .check {
-        top: 10px;
-        left: 10px;
-    }
-}
-.checker {
-    display: inline-block;
-    width:24px;
-    min-height: 24px;
-}
-.check {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    font-size: 16px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; 
-    width: 100%;      
-    input[type="checkbox"] {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-    }
-    .checkmark:after {
-        left: 10px;
-        top: 6px;
-        width: 6px;
-        height: 10px;
-        border: solid #BC5353;
-        border-width: 0 3px 3px 0;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);        
-    }
-}
-.check:hover {
-    input ~ .checkmark {
-        transition: .4s;
-    }
-}
-    .check {
-    input:checked ~ .checkmark {
-        transition: .4s;
-    }
-}
-.check {
-    input:checked ~ .checkmark:after {
-        display: block;        
-    }
-}
-.newData {
-    .checkmark {
-    top: 0px;
-    left: 0px;
-    height: 36px;
-    width: 36px;    
-    }
-    .checkmark:after {
-        left: 15px;
-        top: 11px;          
-    }
-}
-.checkmark {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;           
-}
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-.checkbox {
-    padding: 0;
-    width: 50px;    
-    input {
-        position: absolute;
-        opacity : 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-    }
-} 
- .check {
-        input:checked ~ .checkmark {
-            box-shadow: inset 4px 4px 12px #b3b3b3, inset -4px -4px 12px #ffffff;
-        }
-    }
-    .check:hover {
-        input ~ .checkmark {
-            box-shadow: inset 4px 4px 12px #b3b3b3, inset -4px -4px 12px #ffffff;
-        }
-    }
-    .checkmark {
-        box-shadow: 4px 4px 12px #b3b3b3, -4px -4px 12px #ffffff;
-    }  
 
+.dark {
+	background: $dark;
+	box-shadow: $shade-inv;
+
+	border-radius:12px 0 0 12px;
+
+	h4 { color: $txt-onDark-0; }
+
+	.application input[type=text] {
+		border-bottom: 1px solid lighten($dark, 6%);
+
+		&:focus {
+			box-shadow: $shade-inv;
+		}
+	}
+
+	button {
+		padding:10px 24px;
+		border-radius:12px;
+		outline:none;
+
+		&.add {
+			float:right;
+			padding:0;
+			padding:12px 20px;
+			text-align:center;
+
+			i {
+				width:16px;
+				height:16px;
+				color:$white;
+			}
+		}
+	}
+
+	// Checkmark
+	.checkmark {
+		box-shadow: $shade;
+		background: $dark;
+	}
+	input ~ .checkmark:hover {
+		box-shadow: $shade-inv;
+	}
+	input:checked ~ .checkmark {
+		box-shadow: $shade-inv;
+	}
+}
+
+.white {
+	background: $white;
+	box-shadow: $bright-inv;
+
+	border-radius:0 12px 12px 0;
+
+	h4 { color: $txt-onLight-0; }
+
+	.application input[type=text] {
+		border-bottom: 1px solid darken($white, 6%);
+
+		&:focus {
+			box-shadow: $bright-inv;
+		}
+	}
+
+	// Checkmark
+	.checkmark {
+		box-shadow: $bright;
+		background: $white;
+	}
+	input ~ .checkmark:hover {
+		box-shadow: $bright-inv;
+	}
+	input:checked ~ .checkmark {
+		box-shadow: $bright-inv;
+	}
+}
+@media screen and (max-width: 1200px) {
     
+    .application {
+        padding: 20px 15px;
+        .newData {
+            height: 180px;
+            input {
+                margin-bottom: 20px;
+            }
+        }
+        .task-row {
+            input {
+                width:50%;
+            }
+        }
+
+    }
+    .white {
+        padding: 10px 0;
+    }
+}
+@media screen and (max-width: 500px) {
+    .task-row {
+        input {
+            max-width: 220px;
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .task-row {
+        input {
+            max-width: 150px;
+        }
+    }
+}    
 </style>
 <script>
 export default {

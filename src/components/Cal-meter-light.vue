@@ -6,10 +6,10 @@
             </div>
             <div class="desc items neu-light">
                 <p>Description</p>
-                <p>Calories</p>
+                <p>Cal</p>
                 <p>Fat</p>
-                <p>Carbs</p>
-                <p>Protein</p>
+                <p>Carb</p>
+                <p>Prot</p>
             </div>
             <div class="list">
                 <div v-for="(item, index) in allItems" :key="index" class="items">
@@ -174,7 +174,44 @@ button.item-btn:hover {
 .clearfix {
     clear: both;
 }
+@media screen and (max-width:820px) {
+    .items > *,
+    .new > * ,
+    .totals > *{
+        float: left;
+        width: 20%;
+    }
+    .items > *:first-child,
+    .new > *:first-child,
+    .totals > *:first-child {
+        width: 95%;
+    }
+}
 
+@media screen and (max-width:650px) {
+    .items > *,
+    .new > * ,
+    .totals > *{
+        float: left;
+        width: 15%;
+    }
+    .items > *:first-child,
+    .new > *:first-child,
+    .totals > *:first-child {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:400px) {
+    #calculators {
+        padding: 0;
+    }
+    .items > *:first-child,
+    .new > *:first-child,
+    .totals > *:first-child {
+        width: 85%;
+    }
+}
 </style>
 
 <script>
@@ -195,10 +232,10 @@ export default {
             },
             PH: {
                 desc: "Description",
-                cal: "Calories",
+                cal: "Cal",
                 fat: "Fat",
-                carb: "Carbs",
-                pro: "Protein"
+                carb: "Carb",
+                pro: "Pro"
             },
             allItems: [
                 {

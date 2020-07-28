@@ -1,0 +1,72 @@
+@import 'colors';
+
+::selection {
+  background: lighten($primary, 10%);
+  color:$white;
+}
+
+.right  { float: right; }
+.left   { float: left; }
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.section {
+  display:block;
+  min-height: 400px;
+  padding: 50px 0;
+
+  h1 {
+    font-size: 44px;
+    font-weight: 900;
+    padding:12px 0;
+  }
+
+  h2 {
+      font-size: 34px;
+  }
+
+  p {
+      font-size: 1.2rem;
+  }
+
+  &.dark {
+    background: $dark;
+
+    h1 { color: $primary; }
+    h2 { color: $primary; }
+    h3 { color: $primary; }
+    p { color: $txt-onDark-1; }
+
+    &.darken { background: darken($dark, 5%); }
+  }
+
+  &.light {
+    background: $white;
+
+    h1 { color: $primary; }
+    h2 { color: $txt-onLight-0; }
+    h3 { color: $txt-onLight-1; }
+    p { color: $txt-onLight-1; }
+
+    &.darken { background: lighten($white, 3%); }
+  }
+
+  &.red {
+    background: $primary;
+
+    h1, h2, h3, p { color: $txt-onPrim-0; }
+    &.darken { background: darken($primary, 5%); }
+  }
+
+}
+@media screen and ( max-width: 500px) {
+    .section {
+        display:block;
+        min-height: 400px;
+        padding: 30px 0;
+    }
+}

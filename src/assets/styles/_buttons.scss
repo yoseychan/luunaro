@@ -1,0 +1,83 @@
+a.bttn, button.bttn {
+
+  // Display State
+  display:inline-block;
+
+  // Font formatting
+  font-size:18px;
+  font-weight:600;
+  color: $primary;
+  text-align:center;
+  text-decoration:none;
+  vertical-align: middle;
+  user-select:none;
+  border:none;
+
+  // Transition
+  -webkit-transition: all 0.16s 0s ease-in-out;
+  -moz-transition: all 0.16s 0s ease-in-out;
+  -o-transition: all 0.16s 0s ease-in-out;
+  transition: all 0.16s 0s ease-in-out;
+
+  // Size
+  &.large {
+    font-size:24px;
+    font-weight:900;
+  }
+  &.small {
+    font-size:12px;
+    font-weight:200;
+  }
+  
+  // Themes
+  &.shade {
+    box-shadow: $shade;
+    background: $dark;
+
+    &:hover { box-shadow: $shade-inv; }
+    &:focus { box-shadow: $shade-inv; }
+
+    &.disabled {
+      box-shadow: $shade-inv;
+      color:$txt-onlight-default;
+      cursor:default;
+
+      &:hover &:focus {
+        box-shadow:none;
+      }
+    }
+  }
+  &.bright {
+    box-shadow: $bright;
+    background: $white;
+
+    &:hover { box-shadow: $bright-inv; }
+    &:focus { box-shadow: $bright-inv; }
+
+    &.disabled {
+      box-shadow: $bright-inv;
+      color:$txt-onlight-default;
+      cursor:default;
+
+      &:hover &:focus {
+        box-shadow:none;
+      }
+    }
+  }
+  &.cardinal {
+    box-shadow: $cardinal;
+
+    &:hover { box-shadow: $cardinal-inv; }
+    &:focus { box-shadow: $cardinal-inv; }
+
+    &.disabled {
+      box-shadow: $cardinal-inv;
+      color:$txt-onlight-default;
+      cursor:default;
+
+      &:hover &:focus {
+        box-shadow:none;
+      }
+    }
+  }
+}

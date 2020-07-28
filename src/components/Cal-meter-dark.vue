@@ -1,52 +1,46 @@
 <template>
-    <div class="container section">
-        <h3>Sample application: Calorie counter</h3>
-        <p>The calorie counter allows the user to input the description od the food item and its nutrition values.
-             The application calculates all the submitted values into totals. Users are able to remove and edit them at any time.</p>
-        <div class="row justify-content-center neu-dark-inv">
-            <div id="calculator" class="neu-darker">
-                <div class="headline">
-                    <h4>Calorie counter</h4>
-                </div>
-                <div class="desc items neu-darker">
-                    <p>Description</p>
-                    <p>Calories</p>
-                    <p>Fat</p>
-                    <p>Carbs</p>
-                    <p>Protein</p>
-                </div>
-                <div class="list">
-                    <div v-for="(item, index) in allItems" :key="index" class="items">
-                        <input type="text" v-bind:value="item.desc" >
-                        <input type="text" v-model="item.cal">
-                        <input type="text" v-model="item.fat">
-                        <input type="text" v-model="item.carb">
-                        <input type="text" v-model="item.pro">
-                        <button class="item-btn neu-darker" @click = "remove(index)"> x </button>
-                    </div>
-                </div>
-                <!-- <div class=" total-new"> -->
-                    <div class="totals neu-darker">
-                        <span>Totals:</span>
-                        <span class="count" >{{ total.cal }}</span>
-                        <span class="count">{{ total.fat }}</span>
-                        <span class="count">{{ total.carb }}</span>
-                        <span class="count">{{ total.pro }}</span>    
-                    </div>
-                    <div class="new">
-                        <input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.desc" v-model="newItem.desc">
-                        <input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.cal" v-model="newItem.cal">
-                        <input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.fat" v-model="newItem.fat">
-                        <input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.carb" v-model="newItem.carb">
-                        <input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.pro" v-model="newItem.pro">
-                        <button @click="addNew" class="item-btn add-new neu-darker"> + </button>                    
-                    </div>
-                    <div class="clearfix"></div>
-                <!-- </div>   -->
-            </div>
-        </div>
-        <CalMeterLight></CalMeterLight>
-    </div>
+	<div class="row justify-content-center neu-dark-inv">
+			<div id="calculator" class="neu-darker">
+					<div class="headline">
+							<h4>Calorie counter</h4>
+					</div>
+					<div class="desc items neu-darker">
+							<p>Description</p>
+							<p>Cal</p>
+							<p>Fat</p>
+							<p>Carb</p>
+							<p>Prot</p>
+					</div>
+					<div class="list">
+							<div v-for="(item, index) in allItems" :key="index" class="items">
+									<input type="text" v-bind:value="item.desc" >
+									<input type="text" v-model="item.cal">
+									<input type="text" v-model="item.fat">
+									<input type="text" v-model="item.carb">
+									<input type="text" v-model="item.pro">
+									<button class="item-btn neu-darker" @click = "remove(index)"> x </button>
+							</div>
+					</div>
+					<!-- <div class=" total-new"> -->
+							<div class="totals neu-darker">
+									<span>Totals:</span>
+									<span class="count" >{{ total.cal }}</span>
+									<span class="count">{{ total.fat }}</span>
+									<span class="count">{{ total.carb }}</span>
+									<span class="count">{{ total.pro }}</span>    
+							</div>
+							<div class="new">
+									<input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.desc" v-model="newItem.desc">
+									<input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.cal" v-model="newItem.cal">
+									<input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.fat" v-model="newItem.fat">
+									<input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.carb" v-model="newItem.carb">
+									<input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.pro" v-model="newItem.pro">
+									<button @click="addNew" class="item-btn add-new neu-darker"> + </button>                    
+							</div>
+							<div class="clearfix"></div>
+					<!-- </div>   -->
+			</div>
+	</div>
 </template>
 
 <style scoped lang="scss">
@@ -184,18 +178,52 @@ button.item-btn:hover {
     clear: both;
 }
 
+
+@media screen and (max-width:820px) {
+    .items > *,
+    .new > * ,
+    .totals > *{
+        float: left;
+        width: 20%;
+    }
+    .items > *:first-child,
+    .new > *:first-child,
+    .totals > *:first-child {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .items > *,
+    .new > * ,
+    .totals > *{
+        float: left;
+        width: 15%;
+    }
+    .items > *:first-child,
+    .new > *:first-child,
+    .totals > *:first-child {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:400px) {
+    #calculator {
+        padding: 0;
+    }
+    .items > *:first-child,
+    .new > *:first-child,
+    .totals > *:first-child {
+        width: 85%;
+    }
+}
 </style>
 
 <script>
-import CalMeterLight from '@/components/Cal-meter-light.vue'
-
 export default {
-    name: 'CalMeter',
+    name: 'CalMeterDark',
     props: {
         msg: String,
-    },
-    components: {
-        CalMeterLight
     },
     data(){
         return {
@@ -208,10 +236,10 @@ export default {
             },
             PH: {
                 desc: "Description",
-                cal: "Calories",
+                cal: "Cal",
                 fat: "Fat",
-                carb: "Carbs",
-                pro: "Protein"
+                carb: "Carb",
+                pro: "Prot"
             },
             allItems: [
                 {
