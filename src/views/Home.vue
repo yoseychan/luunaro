@@ -221,7 +221,7 @@ export default {
 
 //Media queries
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 700px){
 //hero margin
     .ff {
         margin-top: 100px;
