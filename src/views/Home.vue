@@ -28,7 +28,7 @@
 				<div class="col-lg-4">
 					<div class="bubble b2">
 						<h2>Neumorphic</h2>
-						<p>Revivng the skeuomorphism and improving it with new proven values of minimalism</p>
+						<p>Reviving the skeuomorphism and improving it with new proven values of minimalism</p>
 					</div>
 				</div>
 				<div class="col-lg-3">
@@ -125,6 +125,7 @@ export default {
 		margin: 170px auto 50px;
 	}
 }
+
 
  //SECOND FOLD BUBBLES
 
