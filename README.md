@@ -1,6 +1,6 @@
 # luunaro
 
-![Luunaro](https://github.com/yoseychan/luunaro/blob/master/public/image/luunaro.png)
+![Luunaro](https://github.com/yoseychan/luunaro/blob/master/public/luunaro.png)
 
 ## About Luunaro
 Luunaro is a design preview website that offers other developers visual examples and recommendations on using the neumorphic design.
