@@ -1,6 +1,6 @@
 # luunaro
 
-![Luunaro](https://github.com/yoseychan/Tuskk/blob/master/public/image/Tuskk.png)
+![Luunaro](https://github.com/yoseychan/luunaro/blob/master/public/image/luunaro.png)
 
 ## About Luunaro
 Luunaro is a design preview website that offers other developers visual examples and recommendations on using the neumorphic design.
@@ -8,6 +8,8 @@ Luunaro is a design preview website that offers other developers visual examples
 ## Built with:
 - [Vue.js](https://vuejs.org/) - Front-End framework 
 - [Bootstrap 4](https://getbootstrap.com/) - CSS library
+
+- Plese make sure that Vue CLI is installed before setting up the project.
 
 ## Setting up the project
 
