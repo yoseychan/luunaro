@@ -1,7 +1,7 @@
 <template>
   <div class="container section">
     <h3>Sample application: Calorie counter</h3>
-    <p>The calorie counter allows the user to input the description od the food item and its nutrition values.
+    <p>The calorie counter allows the user to input the description of the food item and its nutrition values.
         The application calculates all the submitted values into totals. Users are able to remove and edit them at any time.</p>
 
     <CalMeterDark />

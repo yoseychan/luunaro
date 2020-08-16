@@ -6,7 +6,7 @@
 				<div class="right">
 					<router-link class="hnav" to="/neumorphism">Neumorphism</router-link>
 					<router-link to="/examples">Examples</router-link>
-					<a class="disabled">Usability</a>
+                    <router-link to="/usability">Usability</router-link>
 					<router-link to="/about">About</router-link>
 				</div>
                 <div class="burger">
@@ -18,7 +18,7 @@
                         <div class="burger-menu-items">
                             <router-link v-on:click="closeMenu" v-bind:class="classObject" class="hnav" to="/neumorphism">Neumorphism</router-link>
                             <router-link v-on:click="closeMenu" to="/examples">Examples</router-link>
-                            <!-- <a class="disabled">Usability</a> -->
+                            <router-link v-on:click="closeMenu" to="/usability">Usability</router-link>
                             <router-link  v-on:click="closeMenu" to="/about">About</router-link>
                         </div>
                     </div>

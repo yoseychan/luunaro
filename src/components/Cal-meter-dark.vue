@@ -21,24 +21,23 @@
 									<button class="item-btn neu-darker" @click = "remove(index)"> x </button>
 							</div>
 					</div>
-					<!-- <div class=" total-new"> -->
-							<div class="totals neu-darker">
-									<span>Totals:</span>
-									<span class="count" >{{ total.cal }}</span>
-									<span class="count">{{ total.fat }}</span>
-									<span class="count">{{ total.carb }}</span>
-									<span class="count">{{ total.pro }}</span>    
-							</div>
-							<div class="new">
-									<input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.desc" v-model="newItem.desc">
-									<input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.cal" v-model="newItem.cal">
-									<input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.fat" v-model="newItem.fat">
-									<input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.carb" v-model="newItem.carb">
-									<input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.pro" v-model="newItem.pro">
-									<button @click="addNew" class="item-btn add-new neu-darker"> + </button>                    
-							</div>
-							<div class="clearfix"></div>
-					<!-- </div>   -->
+
+                    <div class="totals neu-darker">
+                            <span>Totals:</span>
+                            <span class="count" >{{ total.cal }}</span>
+                            <span class="count">{{ total.fat }}</span>
+                            <span class="count">{{ total.carb }}</span>
+                            <span class="count">{{ total.pro }}</span>    
+                    </div>
+                    <div class="new">
+                            <input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.desc" v-model="newItem.desc">
+                            <input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.cal" v-model="newItem.cal">
+                            <input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.fat" v-model="newItem.fat">
+                            <input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.carb" v-model="newItem.carb">
+                            <input @keypress.enter="addNew" type="text" v-bind:placeholder="PH.pro" v-model="newItem.pro">
+                            <button @click="addNew" class="item-btn add-new neu-darker"> + </button>                    
+                    </div>
+                    <div class="clearfix"></div>
 			</div>
 	</div>
 </template>

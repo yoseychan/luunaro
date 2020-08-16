@@ -47,7 +47,7 @@
 						<h3>Neumorphism</h3>
 					</div>
 					<div class="text">
-						<p>Find out more about neumorphism and its predecessor design concepts - material desing and skeuomorphism.</p>
+						<p>Find out more about neumorphism and its predecessor design concepts - material design and skeuomorphism.</p>
 					</div>
 
 					<Button url="neumorphism" theme="bright">Read More</Button>
@@ -70,7 +70,7 @@
 						<p>List of recommendations on how to use the neumorphic design effectively and its pros and cons.</p>
 					</div>
 
-					<Button url="" theme="bright" disabled>Coming Soon</Button>
+					<Button url="usability" theme="bright">Read more</Button>
 				</div>
 			</div>
 		</div> <!-- White Section End -->
