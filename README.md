@@ -9,7 +9,7 @@ Luunaro is a design preview website that offers other developers visual examples
 - [Vue.js](https://vuejs.org/) - Front-End framework 
 - [Bootstrap 4](https://getbootstrap.com/) - CSS library
 
-- Plese make sure that Vue CLI is installed before setting up the project.
+- Please make sure that Vue CLI is installed before setting up the project.
 
 ## Setting up the project
 
